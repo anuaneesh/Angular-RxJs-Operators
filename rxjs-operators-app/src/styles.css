@@ -1,0 +1,85 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1 {
+  margin-bottom: 8px;
+}
+section {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+section h2 {
+  margin-top: 0;
+}
+.operator-grid {
+  display: grid;
+  gap: 18px;
+}
+.operator-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.button {
+  border: none;
+  background: #0f62fe;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.button.secondary {
+  background: #475569;
+}
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.log-box {
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  min-height: 180px;
+  overflow: auto;
+  padding: 14px;
+  font-family: Consolas, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  line-height: 1.5;
+}
+.log-entry {
+  margin: 0 0 8px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type="text"] {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+}
+small {
+  display: block;
+  margin-top: 6px;
+  color: #344556;
+}

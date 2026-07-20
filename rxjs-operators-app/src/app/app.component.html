@@ -1,0 +1,65 @@
+<div class="app-shell">
+  <h1>{{ title }}</h1>
+  <p>Learn RxJS operator behavior by interacting with four live demos.</p>
+
+  <section>
+    <h2>switchMap</h2>
+    <label>
+      Search input
+      <input type="text" placeholder="Type a search term" (input)="onSearch($any($event.target).value)" />
+    </label>
+    <small>Each new term cancels the previous request and only the latest result is shown.</small>
+    <div class="operator-controls">
+      <span class="button secondary">Typing automatically triggers switchMap</span>
+    </div>
+    <div class="log-box">
+      <p class="log-entry"><strong>Latest result:</strong></p>
+      <p>{{ searchResults$ | async }}</p>
+      <hr />
+      <div *ngFor="let log of searchLog">
+        <p class="log-entry">{{ log }}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="operator-grid">
+    <section>
+      <h2>mergeMap</h2>
+      <p>Every request runs concurrently. Completion order may differ from start order.</p>
+      <div class="operator-controls">
+        <button class="button" (click)="onMergeClick()">Start mergeMap request</button>
+      </div>
+      <div class="log-box">
+        <div *ngFor="let log of mergeLog">
+          <p class="log-entry">{{ log }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>concatMap</h2>
+      <p>Requests are queued and executed one after another in order.</p>
+      <div class="operator-controls">
+        <button class="button" (click)="onConcatClick()">Start concatMap request</button>
+      </div>
+      <div class="log-box">
+        <div *ngFor="let log of concatLog">
+          <p class="log-entry">{{ log }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>exhaustMap</h2>
+      <p>If a request is already in progress, new triggers are ignored.</p>
+      <div class="operator-controls">
+        <button class="button" (click)="onExhaustClick()">Start exhaustMap request</button>
+      </div>
+      <div class="log-box">
+        <div *ngFor="let log of exhaustLog">
+          <p class="log-entry">{{ log }}</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
